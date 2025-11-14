@@ -1,0 +1,15 @@
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+env/
+pyvenv*/
+qlearn_venv/
+
+# Cache
+.DS_Store
+
+# VSCode settings
+.vscode/
