@@ -1,177 +1,156 @@
 # Q--Learning-Grid-World
 A reinforcement learning project using Q-learning to navigate an agent through a grid-based environment towards a goal while optimizing rewards
 
-# 🏴‍☠️ **Treasure Hunt RL — Pirate Q-Learning Adventure**
+🏴‍☠️ Treasure Hunt RL — Pirates of the Caribbean Edition
+⚓ “Not all treasure is silver and gold, mate.” — Captain Jack Sparrow
 
-## 📜 **Project Overview**
+Treasure Hunt RL is a reinforcement learning adventure inspired by the legendary Pirates of the Caribbean universe.
+A lone pirate (your RL agent) must navigate a dangerous grid-world filled with curses, sea monsters, whirlpools, and deadly traps — all while seeking the ultimate treasure chest.
 
-**Treasure Hunt RL** is a grid-world reinforcement learning adventure where a pirate agent must navigate through dangerous seas, hell zones, sea monsters, and obstacles to reach the **hidden treasure chest**.
+Powered by Q-learning, the agent learns to survive like a true pirate of the high seas.
 
-Using **Q-learning**, the agent gradually learns:
+🗺️ The Pirate Grid World
 
-* how to avoid danger
-* how to take the safest path
-* how to maximize rewards
-* how to reach the treasure efficiently
+Your grid-world resembles a map charted by the Brethren Court:
 
-The entire world is designed with pirate-themed sprites, making learning visual and interactive!
+Starting Point: Tortuga (bottom-left corner)
 
----
+Destination: Isla de Muerta treasure 🏝️💰
 
-## 🌍 **The Grid World**
+Dangers Inspired by the Seas:
 
-**Grid Size:** (add your grid size here — e.g. 10×10)
-**Agent Movement:** Up, Down, Left, Right
-**Start Location:** Bottom-left
-**Treasure Location:** Top-right
-**Environment Features:**
+🔥 Cursed zones (Hell States)
 
-| Tile  | Meaning                     |
-| ----- | --------------------------- |
-| 💰    | Treasure (Goal)             |
-| 🔥    | Hell state / Dangerous tile |
-| 🐍    | Sea monster                 |
-| 🌊    | Sea tile                    |
-| 🧱    | Obstacle / Blocked tile     |
-| 🏴‍☠️ | Pirate agent                |
+🐍 Sea monsters (Kraken-like dangers)
 
-The agent must **survive danger**, learn optimal routes, and reach the treasure while minimizing total penalties.
+🌊 Treacherous waters
 
----
+🧱 Blocked reefs
 
-## 🏆 **Reward Structure**
+👻 Ghost pirate tiles (if applicable)
 
-| Event / Tile                 | Reward                        |
-| ---------------------------- | ----------------------------- |
-| 💰 **Reaching Treasure**     | **+20**                       |
-| 🔥 **Entering Hell State**   | **–5**                        |
-| 🐍 **Sea Monster**           | **–3** (or your actual value) |
-| 🚶 **Normal Move**           | –0.01                         |
-| 🚫 **Invalid Move**          | –1                            |
-| ⭐ **Special Bonus (if any)** | +10                           |
+Symbol	Meaning
+🏴‍☠️	Captain Jack (the RL Agent)
+💰	Treasure (Goal)
+🔥	Cursed Hell State
+🐍	Monster / Kraken zone
+🌊	Sea tile
+🧱	Impassable reef
 
-This reward setup encourages the pirate to avoid danger and find the safest + shortest path.
+Your pirate must learn the smartest way through dangerous Caribbean waters to reach the treasure.
 
----
+🏆 Reward System — Like a Pirate's Code
 
-## ⚙️ **Learning Parameters**
+The rewards follow the Code of the Pirate Brethren:
 
-| Parameter            | Value                      |
-| -------------------- | -------------------------- |
-| Learning Rate (α)    | 0.1                        |
-| Discount Factor (γ)  | 0.9                        |
-| Exploration Strategy | ε-Greedy                   |
-| ε Decay              | Exponential                |
-| Episodes             | (add your count e.g. 1000) |
+Event / Tile	Reward	Pirate Meaning
+💰 Treasure Found	+20	“Aye! Gold in the chest!”
+🔥 Cursed Hell State	–5	“Beware the curse of the Black Pearl!”
+🐍 Monster Attacked	–3	“Touched by the Kraken.”
+🚶 Normal Movement	–0.01	Wasted effort / rum
+🚫 Invalid Move	–1	“That’s not how compass points.”
 
-If you want, I can include the exact epsilon decay formula you used.
+This shaping ensures the agent behaves like Jack Sparrow:
+avoiding danger while chasing the biggest reward.
 
----
+⚙️ Learning Parameters
+Parameter	Value
+Learning Rate (α)	0.1
+Discount Factor (γ)	0.9
+Exploration Strategy	ε-Greedy
+ε Decay	Exponential
+Episodes	(you can add your exact number)
+⚔️ How the Pirate Learns (Q-Learning)
 
-## 🚀 **How the Agent Learns**
+Your agent starts inexperienced — like Will Turner before he met Jack.
+Through trial, error, curses, and loot, it learns the rules of the Caribbean:
 
-1. The pirate spawns in the **bottom-left** corner.
-2. It moves through the grid using an ε-greedy strategy.
-3. Each move updates the Q-table using:
+Takes an action (North, South, East, West)
 
-```
-Q(s, a) ← Q(s, a) + α [ R + γ * max(Q(s’)) – Q(s, a) ]
-```
+Observes the reward (gold or danger)
 
-4. The pirate learns:
+Updates its Q-table:
 
-   * to avoid hell state tiles
-   * to bypass sea monsters
-   * to minimize random wandering
-   * to reach the treasure faster
+Q(s, a) ← Q(s, a) + α [R + γ max(Q(s')) − Q(s, a)]
 
-After enough episodes, the pirate becomes **smart**, consistently taking the safest and most rewarding path.
 
----
+Over time, it:
 
-## 🖥️ **Visualization (Sprites / Images)**
+avoids cursed zones
 
-Your project uses images stored in `/assets/` to create a visualized grid:
+escapes monsters
 
-* hell_state_1.png … hell_state_5.png
-* reward / treasure sprites
-* pirate_agent.png
-* sea_tile.png
+navigates smarter
 
-This makes the environment lively and perfect for demos.
+optimizes its path to the Isle of Treasure
 
-If you want, I can help you add a **pygame animation / GIF preview** inside your README.
+Eventually the pirate becomes a master of the seas, consistently reaching the treasure like a seasoned captain.
 
----
+🎮 Caribbean-Themed Visualization
 
-## 📦 **Installation & Setup**
+All sprites in /assets/ bring the world to life:
 
-Clone the repository:
+Pirate Agent → Jack Sparrow sprite
 
-```bash
+Hell states → Cursed flames
+
+Treasure chest → Golden loot
+
+Monster tiles → Sea serpent / Kraken
+
+Sea tiles → Ocean waves
+
+If you want, I can help you add an animated GIF of your game.
+
+📦 Installation
+
+Clone the project:
+
 git clone https://github.com/Nachiketpatil07/Q--Learning-Grid-World.git
 cd Q--Learning-Grid-World
-```
 
-Install dependencies:
 
-```bash
+Install required packages:
+
 pip install -r requirements.txt
-```
 
-Run the training or visualization:
 
-```bash
+Run the project:
+
 python src/main.py
-```
 
----
+📊 Results from the High Seas
 
-## 📊 **Results & Learning Progress**
+As the pirate learns:
 
-* Q-table converges over episodes
-* Agent learns danger zones
-* Stops entering hell states
-* Finds shortest + safest route
-* Episode reward improves steadily
+Fewer cursed tiles entered
 
-If you'd like, I can help you plot:
+Shorter routes to treasure
 
-✔ Reward per episode
-✔ Steps per episode
-✔ Q-table heatmap
-✔ Agent path visualizations
+Q-values stabilize
 
----
+Rewards per episode steadily rise
 
-## 🎯 **Future Improvements**
+Your pirate transforms from a rum-loving wanderer to a deadly-accurate treasure hunter, worthy of the Black Pearl.
 
-* Deep Q-Learning (DQN)
-* Randomized environments each episode
-* Moving sea monsters (dynamic enemies)
-* Multi-agent treasure hunting (Pirate Crew AI)
-* Larger maps or procedural worlds
+🏴‍☠️ Future Enhancements (Pirate Expansion Pack)
 
----
+⚔️ Davy Jones AI (an enemy agent)
 
-## 🖊️ **Author**
+🛳️ Multi-agent crew system
 
-Developed by **Nachiket Patil**
-Inspired by reinforcement learning and pirate-themed exploration 🏴‍☠️
+🪝 Deep Q-Learning for complex seas
 
-If you like this project, consider ⭐ starring the repo!
+🌪️ Storm or whirlpool dynamic hazards
 
----
+📜 Procedurally generated treasure maps
 
-# ⭐ If you want it even more like your friend’s version:
+👑 Author
 
-I can add:
+Developed by Nachiket Patil
+Inspired by Reinforcement Learning and the world of Pirates of the Caribbean.
 
-* Story introduction ("East Blue → Grand Line" style for pirates)
-* ASCII map of your grid
-* Training GIFs
-* Custom color sections
-* Shields.io badges
-* Professional project banner
+“The problem is not the problem. The problem is your attitude about the problem.”
+— Captain Jack Sparrow
 
-Just tell me what theme or style you want (serious, fun, anime-style, fully pirate-themed, etc.).
+If you enjoyed this project, leave a ⭐ on the repo!
