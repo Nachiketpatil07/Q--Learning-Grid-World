@@ -1,9 +1,5 @@
 # Q--Learning-Grid-World
 A reinforcement learning project using Q-learning to navigate an agent through a grid-based environment towards a goal while optimizing rewards
-Perfect — let's make your README **fully themed around *Pirates of the Caribbean*** while keeping it professional, fun, and GitHub-ready.
-This version will feel like Jack Sparrow himself trained your Q-learning agent. 🏴‍☠️⚓
-
----
 
 # 🏴‍☠️ **Treasure Hunt RL — Pirates of the Caribbean Edition**
 
