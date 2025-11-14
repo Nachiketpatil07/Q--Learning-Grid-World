@@ -1,10 +1,5 @@
 # Q--Learning-Grid-World
 A reinforcement learning project using Q-learning to navigate an agent through a grid-based environment towards a goal while optimizing rewards
-Perfect — I’ll create a README **exactly similar in style, tone, structure, and emojis** to your friend’s One Piece–themed README, but tailored **100% to YOUR project** (Treasure Hunt Q-Learning with pirate theme + hell states + treasure + sea monsters).
-
-Here is your **final polished README**, ready to paste into GitHub:
-
----
 
 # 🏴‍☠️ **Treasure Hunt RL — Pirate Q-Learning Adventure**
 
